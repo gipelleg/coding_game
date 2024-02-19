@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.interface';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { environment } from '../../environments/environment';
+
+const USER_API = '/users';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +22,7 @@ export class UserService {
   }
 
   getAllUsers() {
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<User[]>(`${environment.baseApi}/${USER_API}`);
   }
 
 }
