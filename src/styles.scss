@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/_global';
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import 'primeflex/primeflex.scss';
+
+.post-title {
+  font-size: 2rem !important;
+  color: $primary;
+}
+
+.post-body {
+ font-size: 1rem !important;
+}
+
+.post-publisher {
+  font-size: 0.75rem !important;
+  color: $primary;
+}
+
+.border-item {
+  border-bottom: 2px solid #eeeeee !important;
+}

@@ -1,0 +1,23 @@
+<div class="border-item">
+  <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4">
+    <div class="flex justify-content-center pt-3">
+      <app-avatar *ngIf="findPublisher(post!.userId)"
+        [user]="findPublisher(post.userId)!"
+        [post]="post"
+      >
+    </app-avatar>
+    </div>
+    <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+      <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+        <div class="text-2xl font-bold post-title">{{ post.title }}</div>
+        <div class="flex align-items-center gap-3">
+          <span class="flex align-items-center gap-2 font-semibold">
+            Pubblicato da:
+            <a (click)="goToUserDetails(findPublisher(post.userId)!)" class="font-semibold post-publisher cursor-pointer underline">{{ findPublisher(post!.userId)?.username }}</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

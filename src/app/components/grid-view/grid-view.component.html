@@ -1,0 +1,21 @@
+<div class="border-item">
+  <div class="p-4 border-1 surface-border surface-card">
+    <div class="flex justify-content-center pb-3">
+      <app-avatar *ngIf="findPublisher(post.userId)"
+        [user]="findPublisher(post.userId)!"
+        [post]="post"
+      >
+    </app-avatar>
+    </div>
+      <div class="flex flex-wrap align-items-center justify-content-between gap-2">
+          <span class="flex align-items-center gap-2 post-title font-bold">
+              {{ post.title }}
+          </span>
+
+      </div>
+      <div class="flex align-items-center justify-content-between gap-3 py-5">
+        <span class="font-semibold">Pubblicato da: </span>
+        <a (click)="goToUserDetails(findPublisher(post.userId)!)" class="font-semibold post-publisher cursor-pointer underline">{{ findPublisher(post.userId)?.username }}</a>
+      </div>
+  </div>
+</div>
